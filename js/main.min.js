@@ -11,13 +11,13 @@ var list = document.querySelector('.list');
 
 //Funcion crear li al clickar el boton
 
-function createItemList (name){
+function createItemList (name,pictureUrl){
   var newItemList = document.createElement('li');
   var newShowImage = document.createElement('img');
   var newShowTitle = document.createElement('h2');
   var nameOfTheShow = document.createTextNode(name);
-  // console.log('Lo de dentro del input', nameOfTheShow);
-  newShowImage.src = 'https://via.placeholder.com/210x295/cccccc/666666/?text=TV';
+
+  newShowImage.src = pictureUrl;
   newShowTitle.classList.add('showTitle');
   newShowTitle.appendChild(nameOfTheShow);
   newItemList.appendChild(newShowImage);
@@ -31,6 +31,7 @@ function createItemList (name){
 function searchForResults(){
   var inputSerieValue = inputSerie.value;
   var url = 'http://api.tvmaze.com/search/shows?q=' + inputSerieValue;
+  list.innerHTML = '';
   console.log('Dentro input despues click', inputSerieValue);
   console.log('url peticion', url);
   fetch(url)
@@ -50,9 +51,20 @@ function searchForResults(){
         var showInfo = json[i].show;
         // console.log('json i show', showInfo);
         var nameShow = showInfo.name;
+        var imageShow = showInfo.image;
+        if(imageShow === null){
+          var imageShowOriginal = 'https://via.placeholder.com/210x295/cccccc/666666/?text=TV'
+        } else{
+          var imageShowOriginal = imageShow.medium;
+        }
         nameShowArray[i] = name;
+
+        console.log(nameShowArray);
         console.log('el nombre dentro show', nameShow);
-        createItemList(nameShow);
+        console.log('la clave image', imageShow);
+        console.log('la imagen original ', imageShowOriginal);
+
+        createItemList(nameShow,imageShowOriginal);
       }
 
       // nombre.innerHTML = json.name;
