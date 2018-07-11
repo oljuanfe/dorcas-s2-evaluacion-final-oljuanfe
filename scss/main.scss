@@ -1,4 +1,52 @@
-body {
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
-	height: 100vh;
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.input-search {
+	appearance: none;
+	border: 0;
+	border-bottom: 1px solid black;
+}
+
+.button {
+	appearance: none;
+	border: 0;
+	height: 25px;
+	width: 30%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: white;
+	background-color: #8A0829;
+}
+.list {
+	list-style: none;
+	display: grid;
+	grid-template-columns: 25% 1fr 1fr 25%;
+	grid-gap: 20px;
+	text-align: center;
+}
+
+.itemList {
+}
+
+.not-favorite {
+background-color: #A9E2F3;
+}
+
+.favorite {
+	background-color: #F5A9E1;
+	border: 5px solid #8A0829;
 }
