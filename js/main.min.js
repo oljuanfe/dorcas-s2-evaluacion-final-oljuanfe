@@ -21,10 +21,11 @@ function createItemList (name,pictureUrl){
   var nameOfTheShow = document.createTextNode(name);
 
   newShowImage.src = pictureUrl;
-  newShowTitle.classList.add('showTitle');
+  newShowImage.classList.add('picture');
+  newShowTitle.classList.add('showTitle','item-title');
   newShowTitle.appendChild(nameOfTheShow);
   newItemList.appendChild(newShowImage);
-  newItemList.classList.add('itemList', 'not-favorite');
+  newItemList.classList.add('itemList', 'not-favorite', 'item-list');
   newItemList.appendChild(newShowTitle);
   list.appendChild(newItemList);
 }
@@ -33,7 +34,7 @@ function createItemList (name,pictureUrl){
 
 function searchForResults(){
   var inputSerieValue = inputSerie.value;
-  var url = 'http://api.tvmaze.com/search/shows?q=' + inputSerieValue;
+  var url = 'https://api.tvmaze.com/search/shows?q=' + inputSerieValue;
   list.innerHTML = '';
   console.log('Dentro input despues click', inputSerieValue);
   console.log('url peticion', url);
@@ -77,12 +78,15 @@ function searchForResults(){
 function chooseFavorite(){
   console.log('estoy clickandoo,oo,oooo');
   var itemClicked = event.currentTarget;
-  itemClicked.classList.add('favorite');
-  itemClicked.classList.remove('not-favorite');
-  // var id = event.currentTarget.getAttribute('data-id');
-  // alert(event.currentTarget.innerHTML + ' ' + movies[id].director + ' ' + movies[id].year);
-
-
+  // itemClicked.classList.add('favorite');
+  // itemClicked.classList.remove('not-favorite');
+  if(itemClicked.classList.contains('not-favorite')){
+    itemClicked.classList.add('favorite');
+    itemClicked.classList.remove('not-favorite');
+  } else {
+    itemClicked.classList.remove('favorite');
+    itemClicked.classList.add('not-favorite');
+  }
 }
 
 
