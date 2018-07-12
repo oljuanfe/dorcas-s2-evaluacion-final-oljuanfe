@@ -27,7 +27,6 @@ body {
 }
 
 .input-search {
-  width: 25%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -41,9 +40,10 @@ body {
   appearance: none;
   border: 0;
   height: 25px;
-  width: 25%;
   margin-top: 20px;
   margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
   color: white;
   background-color: #8A0829;
 }
@@ -82,10 +82,38 @@ body {
 .favorite {
   background-color: #F5A9E1;
   border: 5px solid #8A0829;
+  -webkit-animation-name: bigger;
+  animation-name: bigger;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
 }
 
 .favorite .item-title {
   color: #8A0829;
+}
+
+@-webkit-keyframes bigger {
+  from {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes bigger {
+  from {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

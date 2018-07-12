@@ -99,13 +99,13 @@ function listeningToItemList(){
   console.log('estoy escuchandooo,ooo');
   var itemList = document.querySelectorAll('.list .itemList');
   for (var i = 0; i < itemList.length; i++){
-    var paco = itemList[i];
+    var itemListAsArray = itemList[i];
     console.log(itemList[i]);
-    paco.addEventListener('click', chooseFavorite);
+    itemListAsArray.addEventListener('click', chooseFavorite);
   }
 }
 
-var body = document.querySelector('body');
+
 
 function searchWithEnter(){
   console.log('He apretado EEENTEEER');

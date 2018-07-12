@@ -19,7 +19,6 @@ body {
 }
 
 .input-search {
-	width: 25%;
 	appearance: none;
 	border: 0;
 	border-bottom: 1px solid black;
@@ -29,9 +28,10 @@ body {
 	appearance: none;
 	border: 0;
 	height: 25px;
-	width: 25%;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
 	color: white;
 	background-color: #8A0829;
 }
@@ -68,7 +68,18 @@ background-color: #A9E2F3;
 .favorite {
 	background-color: #F5A9E1;
 	border: 5px solid #8A0829;
+	animation-name: bigger;
+  animation-duration: 2s;
 	.item-title {
 		color: #8A0829;
 	}
+}
+
+@keyframes bigger {
+    from {
+        transform: scale(1.5);
+    }
+    to {
+        transform: scale(1);
+    }
 }
