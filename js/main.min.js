@@ -71,35 +71,39 @@ function searchForResults(){
 
         createItemList(nameShow,imageShowOriginal,idShow);
         listeningToItemList();
+        console.log(idShow);
+        // getInfoToStorage(idShow);
       }
+
     });
 }
-
+//
+// function getInfoToStorage (idShow){
+//   var itemList = document.querySelectorAll('.list .itemList');
+//   for (var i = 0; i < itemList.length; i++){
+//     if(itemList.classList.contains('favorite')){
+//       infoToLocalStorage[i] = localStorage.setItem('favoriteShow', JSON.stringify(idShow));
+//     }
+//   }
+//
+// }
 
 //Función para con evento click elegir favorito y que ponga borde y otro color.También tiene animacion en css
 
 function chooseFavorite(){
   console.log('estoy clickandoo,oo,oooo');
-  var favorite =localStorage.getItem('favoriteShow');
-  var extractLocalStorage = JSON.parse(favorite);
-  console.log(extractLocalStorage);
+  // var favorite =localStorage.getItem('favoriteShow');
+  // var extractLocalStorage = JSON.parse(favorite);
+
   var itemClicked = event.currentTarget;
-  var showTitleItemList = itemClicked.lastChild.innerHTML;
-  console.log('currentTarget', itemClicked);
   if(itemClicked.classList.contains('not-favorite')){
     itemClicked.classList.add('favorite');
     itemClicked.classList.remove('not-favorite');
-    console.log(showTitleItemList);
-    // localStorage.setItem('favoriteShow', JSON.stringify(showTitleItemList));
   } else {
     itemClicked.classList.remove('favorite');
     itemClicked.classList.add('not-favorite');
   }
-  // if (itemClicked.classList.contains('favorite')){
-
-      infoToLocalStorage[i] = localStorage.setItem('favoriteShow', JSON.stringify(showTitleItemList));
-
-  // }
+  // saveLocalStorage(itemClicked);
 }
 
 
