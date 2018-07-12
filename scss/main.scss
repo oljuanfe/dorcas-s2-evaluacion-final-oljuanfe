@@ -40,9 +40,14 @@ body {
 	margin-left: 20px;
 	list-style: none;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr;
 	grid-gap: 20px;
 	text-align: center;
+	@media all and (min-width:768px){
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 20px;
+	}
 }
 
 .item-list {
