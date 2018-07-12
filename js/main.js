@@ -105,5 +105,16 @@ function listeningToItemList(){
   }
 }
 
+var body = document.querySelector('body');
+
+function searchWithEnter(){
+  console.log('He apretado EEENTEEER');
+  if(event.key === 'Enter'){
+    console.log('He apretado EEENTEEER');
+    searchForResults(event);
+  }
+}
+
+window.addEventListener('keydown', searchWithEnter);
 
 //Fin

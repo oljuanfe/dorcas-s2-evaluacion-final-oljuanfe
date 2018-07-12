@@ -64,7 +64,6 @@ body {
 
 .item-title {
   margin: 5px;
-  color: #8A0829;
   font-size: 25px;
 }
 
@@ -76,9 +75,17 @@ body {
   background-color: #A9E2F3;
 }
 
+.not-favorite .item-title {
+  color: blue;
+}
+
 .favorite {
   background-color: #F5A9E1;
   border: 5px solid #8A0829;
+}
+
+.favorite .item-title {
+  color: #8A0829;
 }
 
 /*# sourceMappingURL=main.css.map */
